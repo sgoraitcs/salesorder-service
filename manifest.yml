@@ -1,0 +1,15 @@
+---
+applications:
+- name: sales-order-service
+  host: sales-order-service-test
+  random-route: true
+  path: target/sales-order-service-0.0.1-SNAPSHOT.jar
+  memory: 700M
+  env:
+   SPRING_PROFILES_ACTIVE: dev
+  services:  
+  - service-registry
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
